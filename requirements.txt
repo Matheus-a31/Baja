@@ -1,20 +1,6 @@
 Flask==3.0.3
 gunicorn==22.0.0
-# Se você usa o Jinja2 diretamente no Flask (templates)
-Jinja2==3.1.4
-MarkupSafe==2.1.5
-itsdangerous==2.2.0
-Werkzeug==3.0.3
 
-# Bibliotecas de AI/Dados Essenciais (Se o app.py realmente as utiliza)
-numpy==1.26.4
-pandas==2.2.2
-opencv-python-headless==4.10.0.82
-tensorflow==2.16.1
-keras==3.3.3
-deepface==0.0.92
-retina-face==0.0.17
-protobuf==4.25.3
 
 # Utilitários e Requisições
 requests==2.31.0
