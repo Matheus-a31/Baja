@@ -148,7 +148,7 @@ PyMatting==1.1.12
 pyparsing==3.1.2
 PyPDF2==3.0.1
 pyreadline3==3.4.1
-PySimpleGUI==5.0.4
+PySimpleGUI
 PySocks==1.7.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
