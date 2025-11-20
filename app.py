@@ -5,7 +5,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 load_dotenv() 
 
-app = Flask(__name__)
+
+app = Flask(__name__, template_folder='.')
 app.secret_key = os.getenv("SECRET_KEY") 
 
 
@@ -37,7 +38,6 @@ def index():
     
     posts = Post.query.all()
 
-    
     return render_template('index.html', 
                            lista_parceiros=parceiros_com_imagem, 
                            lista_posts=posts)
