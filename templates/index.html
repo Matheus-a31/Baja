@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Iaguary Baja - Equipe de Baja SAE</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" href="{{ url_for('favicon') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class", // Importante: ativa o modo manual via classe
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#DC2626", 
+              "background-light": "#FFFFFF",
+              "background-dark": "#111827",
+              "text-light": "#111827",
+              "text-dark": "#FFFFFF",
+              "card-light": "#f6f7f8",
+              "card-dark": "#1a1a1a",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+          },
+        },
+      }
+    </script>
+    
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+
+    <script>
+        // 1. Verifica a preferência salva ou do sistema assim que carrega
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+
+        // 2. Função para alternar e salvar
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light'; // Salva no navegador
+                icon.innerText = 'dark_mode'; // Muda ícone para Lua
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark'; // Salva no navegador
+                icon.innerText = 'light_mode'; // Muda ícone para Sol
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark flex flex-col min-h-screen transition-colors duration-300">
+
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-gray-800 bg-black text-white px-4 md:px-10 py-4 sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <img src="/imagens/logo.jpg" alt="Logo Iaguary Baja" class="h-10 w-auto rounded-full">
+            <h2 class="text-xl font-bold">Iaguary Baja</h2>
+        </div>
+        <nav class="hidden md:flex gap-6 text-sm font-medium">
+            <a href="#" class="hover:text-primary transition-colors">Início</a>
+            <a href="#quem-somos" class="hover:text-primary transition-colors">Quem Somos</a>
+            <a href="#instagram" class="hover:text-primary transition-colors">Instagram</a>
+            <a href="#apoiadores" class="hover:text-primary transition-colors">Apoiadores</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <button onclick="toggleTheme()" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-800 hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+                <span id="theme-icon" class="material-symbols-outlined text-gray-400" style="font-size: 20px;">
+                    <script>
+                        document.write(document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode');
+                    </script>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <section class="px-4 md:px-10 lg:px-20 xl:px-40 py-10">
+            <div class="@container">
+                <div class="min-h-[50vh] md:min-h-[530px] flex flex-col justify-end p-6 md:p-10 rounded-xl bg-cover bg-center text-white shadow-2xl" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("imagens/IMG_5734.JPG");'>
+                    <div class="max-w-2xl space-y-4">
+                        <h1 class="text-4xl @[480px]:text-5xl font-bold tracking-tight">Iaguary Baja</h1>
+                        <p class="text-base @[480px]:text-lg text-white/90">A equipe de Baja da Universidade Federal do Ceará em Russas-CE, dedicada a projetar e construir veículos off-road para competições nacionais e internacionais.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#quem-somos" class="bg-primary hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-sm @[480px]:text-base transition-colors shadow-lg">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quem-somos" class="px-4 md:px-10 lg:px-20 xl:px-40 py-10">
+            <div class="container mx-auto">
+                <div class="mx-auto max-w-4xl">
+                    <div class="mb-12 text-center">
+                        <h2 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Quem Somos</h2>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 text-justify leading-relaxed">O Iaguary Baja é um projeto de extensão universitária da Universidade Federal do Ceará - Campus Russas que visa o desenvolvimento de um protótipo de veículo off-road, conhecido como Baja SAE. O projeto proporciona aos estudantes a oportunidade de aplicar conhecimentos teóricos em um contexto prático, desenvolvendo habilidades técnicas e de gestão de projetos.</p>
+                    </div>
+
+                    <div class="mb-16">
+                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-5">
+                            <div class="col-span-1 h-96 w-full rounded-lg bg-cover bg-center md:col-span-3 shadow-md hover:shadow-xl transition-shadow" style='background-image: url("imagens/IMG_5743.JPG");'></div>
+                            <div class="col-span-1 h-96 w-full rounded-lg bg-cover bg-center md:col-span-2 shadow-md hover:shadow-xl transition-shadow" style='background-image: url("imagens/carro.jpg");'></div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-12">
+                        <div class="rounded-lg bg-card-light p-8 shadow-sm dark:bg-card-dark border border-gray-100 dark:border-gray-800">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Nossa <span class="text-primary">História</span></h3>
+                            <p class="mt-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 text-justify">Fundado em 2018, o Iaguary Baja surgiu com o objetivo de participar da competição Baja SAE Brasil, promovida pela Sociedade de Engenheiros da Mobilidade (SAE). A equipe é composta por estudantes de diversos cursos de engenharia, que trabalham em conjunto para projetar, fabricar e testar o veículo.</p>
+                        </div>
+                        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                            <div class="rounded-lg bg-card-light p-8 shadow-sm dark:bg-card-dark border border-gray-100 dark:border-gray-800">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Nossa <span class="text-primary">Missão</span></h3>
+                                <p class="mt-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 text-justify">Desenvolver um protótipo de Baja SAE competitivo, que alie desempenho, segurança e inovação, proporcionando aos estudantes uma experiência enriquecedora em engenharia e gestão de projetos.</p>
+                            </div>
+                            <div class="rounded-lg bg-card-light p-8 shadow-sm dark:bg-card-dark border border-gray-100 dark:border-gray-800">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Nossos <span class="text-primary">Valores</span></h3>
+                                <p class="mt-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 text-justify">Trabalho em equipe, inovação, comprometimento, responsabilidade, aprendizado contínuo e respeito.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instagram" class="px-4 md:px-10 lg:px-20 xl:px-40 py-16 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto max-w-5xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 dark:text-white">
+                        Acompanhe no <span class="text-primary">Instagram</span>
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                        Fique por dentro do dia a dia da nossa equipe.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    {% for post in lista_posts %}
+                    <a href="{{ post.link_post }}" target="_blank" rel="noopener noreferrer" class="group block relative rounded-xl overflow-hidden shadow-lg aspect-square bg-gray-200 dark:bg-gray-800">
+                        <img src="/{{ post.imagem_url }}" alt="{{ post.legenda }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 flex items-center justify-center transition-all duration-300">
+                            <svg class="w-12 h-12 text-white opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm4.878-8.25a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        <section id="apoiadores" class="px-4 md:px-10 lg:px-20 xl:px-40 py-16 text-center bg-card-light dark:bg-card-dark transition-colors duration-300">
+            <h2 class="text-4xl font-bold text-text-light dark:text-text-dark mb-12">Nossos Apoiadores</h2>
+            <div class="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center">
+                {% for parceiro in lista_parceiros %}
+                    <div class="flex justify-center items-center h-24 bg-gray-200 dark:bg-gray-700 rounded-lg p-4 transition-transform hover:scale-105">
+                        <img src="/{{ parceiro.logo }}" alt="{{ parceiro.nome }}" class="max-h-full max-w-full object-contain">
+                    </div>
+                {% endfor %}
+            </div>
+            {% if not lista_parceiros %}
+                <p class="text-gray-500">Em breve, novos parceiros.</p>
+            {% endif %}
+        </section>
+
+    </main>
+    
+    <footer class="bg-black text-white mt-auto">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+            <div class="flex justify-center gap-8 mb-8">
+                <a class="hover:text-primary transition-colors" href="https://www.instagram.com/iaguarybaja/" target="_blank">
+                    <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm4.878-8.25a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clip-rule="evenodd" /></svg>
+                </a>
+                <a class="hover:text-primary transition-colors" href="https://www.linkedin.com/company/iaguary-baja/" target="_blank">
+                     <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 text-gray-400 mb-8">
+                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">location_on</span><p>R. Felipe Santiago, 411 - Cidade Universitária, Russas - CE</p></div>
+                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">mail</span><p>iaguary.baja@ufc.br</p></div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-sm text-gray-500">© 2025 Iaguary Baja. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
