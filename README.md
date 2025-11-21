@@ -1,4 +1,4 @@
-# 🚀 Iaguary Baja - Website Institucional
+# 🚀 Iaguary Baja - site do projeto
 
 O **Iaguary Baja** é um projeto de extensão universitária da Universidade Federal do Ceará - Campus Russas, focado no desenvolvimento de um protótipo de veículo off-road para a competição Baja SAE Brasil.
 
@@ -26,7 +26,7 @@ Certifique-se de ter o **Python (3.8+)** e o **`pip`** instalados.
 #### 2. Clonar o Repositório
 
 ```bash
-git clone [URL_DO_SEU_REPOSITORIO]
+git clone https://github.com/Matheus-a31/Baja.git
 cd iaguary-baja-site # Ou o nome do diretório
 
 
