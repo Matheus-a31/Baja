@@ -39,3 +39,4 @@ with app.app_context():
    
     db.session.commit()
     print("Dados criados com sucesso! Agora o site vai mostrar as imagens.")
+    
