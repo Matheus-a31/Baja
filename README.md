@@ -1,13 +1,33 @@
-Iaguary Baja - site do Projeto
-O Iaguary Baja é um projeto de extensão universitária da Universidade Federal do Ceará - Campus Russas, focado no desenvolvimento de um protótipo de veículo off-road para a competição Baja SAE Brasil.
+# 🚀 Iaguary Baja - Website Institucional
 
-Este website institucional, desenvolvido com Flask e Tailwind CSS, é a vitrine digital da equipe, apresentando a história, missão, valores e mantendo o público atualizado com as últimas publicações do Instagram e a lista de apoiadores.
+[cite_start]O **Iaguary Baja** é um projeto de extensão universitária da Universidade Federal do Ceará - Campus Russas, focado no desenvolvimento de um protótipo de veículo off-road para a competição Baja SAE Brasil.
 
-Tecnologias Utilizadas
-Backend: Python com Flask (Micro-framework)
+[cite_start]Este website institucional é a vitrine digital da equipe, apresentando a história, missão, valores e mantendo o público atualizado com as últimas publicações do Instagram e a lista de apoiadores.
 
-Banco de Dados: SQLAlchemy (ORM)
+---
 
-Frontend: Tailwind CSS (Framework de CSS utilitário) e HTML com Jinja2.
+### ✨ Tecnologias Utilizadas
 
-Hospedagem: Vercel
+* **Backend:** Python com **Flask** (Micro-framework)
+* **Banco de Dados:** **SQLAlchemy** (ORM)
+* [cite_start]**Frontend:** **Tailwind CSS** (Framework de CSS utilitário) e HTML com Jinja2.
+* **Hospedagem:** **Vercel**
+
+---
+
+### ⚙️ Configuração Local (Ambiente de Desenvolvimento)
+
+Para rodar o projeto em sua máquina local, siga os passos abaixo.    
+
+#### 1. Pré-requisitos
+
+Certifique-se de ter o **Python (3.8+)** e o **`pip`** instalados.
+
+#### 2. Clonar o Repositório
+
+```bash
+git clone [URL_DO_SEU_REPOSITORIO]
+cd iaguary-baja-site # Ou o nome do diretório
+
+
+
