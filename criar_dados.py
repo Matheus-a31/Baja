@@ -8,11 +8,9 @@ with app.app_context():
 
     
     print("Criando parceiros...")
-    p1 = Parceiro(nome="Honda", logo="imagens/honda-3d-vector-logo.png")
-    p2 = Parceiro(nome="Parceiro Sem Logo", logo="") 
+    p1 = Parceiro(nome="Parceiro Sem Logo", logo="") 
     
     db.session.add(p1)
-    db.session.add(p2)
 
     
     print("Criando posts...")
