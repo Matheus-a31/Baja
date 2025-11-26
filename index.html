@@ -40,7 +40,6 @@
     </style>
 
     <script>
-        
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
         } else {
@@ -61,29 +60,59 @@
                 icon.innerText = 'light_mode'; 
             }
         }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.innerText = 'close'; 
+            } else {
+                menu.classList.add('hidden');
+                icon.innerText = 'menu'; 
+            }
+        }
     </script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark flex flex-col min-h-screen transition-colors duration-300">
 
-    <header class="flex items-center justify-between whitespace-nowrap border-b border-gray-800 bg-black text-white px-4 md:px-10 py-4 sticky top-0 z-50">
-        <div class="flex items-center gap-3">
-            <img src="/imagens/logo.jpg" alt="Logo Iaguary Baja" class="h-10 w-auto rounded-full">
-            <h2 class="text-xl font-bold">Iaguary Baja</h2>
+    <header class="bg-black text-white sticky top-0 z-50 border-b border-gray-800">
+        <div class="flex items-center justify-between px-4 md:px-10 py-4">
+            <div class="flex items-center gap-3">
+                <img src="/imagens/logo.jpg" alt="Logo Iaguary Baja" class="h-10 w-auto rounded-full">
+                <h2 class="text-xl font-bold">Iaguary Baja</h2>
+            </div>
+            
+            <nav class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="#" class="hover:text-primary transition-colors">Início</a>
+                <a href="#quem-somos" class="hover:text-primary transition-colors">Quem Somos</a>
+                <a href="#instagram" class="hover:text-primary transition-colors">Instagram</a>
+                <a href="#apoiadores" class="hover:text-primary transition-colors">Apoiadores</a>
+            </nav>
+            
+            <div class="flex items-center gap-4">
+                <button onclick="toggleTheme()" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-800 hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+                    <span id="theme-icon" class="material-symbols-outlined text-gray-400" style="font-size: 20px;">
+                        <script>
+                            document.write(document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode');
+                        </script>
+                    </span>
+                </button>
+
+                <button onclick="toggleMenu()" class="md:hidden flex items-center justify-center rounded-md h-10 w-10 text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <span id="menu-icon" class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
         </div>
-        <nav class="hidden md:flex gap-6 text-sm font-medium">
-            <a href="#" class="hover:text-primary transition-colors">Início</a>
-            <a href="#quem-somos" class="hover:text-primary transition-colors">Quem Somos</a>
-            <a href="#instagram" class="hover:text-primary transition-colors">Instagram</a>
-            <a href="#apoiadores" class="hover:text-primary transition-colors">Apoiadores</a>
-        </nav>
-        <div class="flex items-center gap-4">
-            <button onclick="toggleTheme()" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-800 hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
-                <span id="theme-icon" class="material-symbols-outlined text-gray-400" style="font-size: 20px;">
-                    <script>
-                        document.write(document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode');
-                    </script>
-                </span>
-            </button>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800">
+            <div class="flex flex-col px-4 py-4 space-y-2">
+                <a href="#" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-primary transition-colors">Início</a>
+                <a href="#quem-somos" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-primary transition-colors">Quem Somos</a>
+                <a href="#instagram" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-primary transition-colors">Instagram</a>
+                <a href="#apoiadores" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-primary transition-colors">Apoiadores</a>
+            </div>
         </div>
     </header>
 
@@ -118,9 +147,6 @@
                         </div>
                     </div>
                             
-
-                    
-                    
                     <div class="space-y-12">
                         <div class="rounded-lg bg-card-light p-8 shadow-sm dark:bg-card-dark border border-gray-100 dark:border-gray-800">
                             <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Nossa <span class="text-primary">História</span></h3>
