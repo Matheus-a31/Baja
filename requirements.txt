@@ -1,7 +1,5 @@
-flask
+Flask
 python-dotenv
-flask-sqlalchemy
-psycopg2-binary
-
-
-requests
+Flask-SQLAlchemy
+SQLAlchemy
+psycopg2-binary  # Driver necessário para conectar ao PostgreSQL/Neon

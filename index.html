@@ -40,26 +40,25 @@
     </style>
 
     <script>
-        // 1. Verifica a preferência salva ou do sistema assim que carrega
+        
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
         } else {
             document.documentElement.classList.remove('dark')
         }
 
-        // 2. Função para alternar e salvar
         function toggleTheme() {
             const html = document.documentElement;
             const icon = document.getElementById('theme-icon');
             
             if (html.classList.contains('dark')) {
                 html.classList.remove('dark');
-                localStorage.theme = 'light'; // Salva no navegador
-                icon.innerText = 'dark_mode'; // Muda ícone para Lua
+                localStorage.theme = 'light'; 
+                icon.innerText = 'dark_mode'; 
             } else {
                 html.classList.add('dark');
-                localStorage.theme = 'dark'; // Salva no navegador
-                icon.innerText = 'light_mode'; // Muda ícone para Sol
+                localStorage.theme = 'dark'; 
+                icon.innerText = 'light_mode'; 
             }
         }
     </script>
@@ -92,7 +91,7 @@
         
         <section class="px-4 md:px-10 lg:px-20 xl:px-40 py-10">
             <div class="@container">
-                <div class="min-h-[50vh] md:min-h-[530px] flex flex-col justify-end p-6 md:p-10 rounded-xl bg-cover bg-center text-white shadow-2xl" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("imagens/IMG_5734.JPG");'>
+                <div class="min-h-[50vh] md:min-h-[530px] flex flex-col justify-end p-6 md:p-10 rounded-xl bg-cover bg-center text-white shadow-2xl" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("imagens/IMG_5743.jpg");'>
                     <div class="max-w-2xl space-y-4">
                         <h1 class="text-4xl @[480px]:text-5xl font-bold tracking-tight">Iaguary Baja</h1>
                         <p class="text-base @[480px]:text-lg text-white/90">A equipe de Baja da Universidade Federal do Ceará em Russas-CE, dedicada a projetar e construir veículos off-road para competições nacionais e internacionais.</p>
@@ -114,8 +113,8 @@
 
                     <div class="mb-16">
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-5">
-                            <div class="col-span-1 h-96 w-full rounded-lg bg-cover bg-center md:col-span-3 shadow-md hover:shadow-xl transition-shadow" style='background-image: url("imagens/IMG_5743.JPG");'></div>
-                            <div class="col-span-1 h-96 w-full rounded-lg bg-cover bg-center md:col-span-2 shadow-md hover:shadow-xl transition-shadow" style='background-image: url("imagens/carro.jpg");'></div>
+                            <div class="col-span-1 h-96 w-full rounded-lg bg-cover bg-center md:col-span-3 shadow-md hover:shadow-xl transition-shadow" style='background-image: url("imagens/IMG_5734.JPG");'></div>
+                            <div class="col-span-1 h-96 w-full rounded-lg bg-cover bg-center md:col-span-2 shadow-md hover:shadow-xl transition-shadow" style='background-image: url("imagens/IMG_5748.jpg");'></div>
                         </div>
                     </div>
                     
@@ -196,8 +195,8 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 text-gray-400 mb-8">
-                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">location_on</span><p>R. Felipe Santiago, 411 - Cidade Universitária, Russas - CE</p></div>
-                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">mail</span><p>iaguary.baja@ufc.br</p></div>
+                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">location_on</span><p class="hover:text-primary transition-colors">R. Felipe Santiago, 411 - Cidade Universitária, Russas - CE</p></div>
+                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">mail</span><a href="mailto:iaguary.baja@ufc.br" class="hover:text-primary transition-colors">iaguary.baja@ufc.br </a></div>
             </div>
             
             <div class="border-t border-gray-800 pt-8">
