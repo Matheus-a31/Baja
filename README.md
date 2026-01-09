@@ -1,4 +1,4 @@
-# 🚀 Iaguary Baja - site do projeto
+# Iaguary Baja - site do projeto
 
 O **Iaguary Baja** é um projeto de extensão universitária da Universidade Federal do Ceará - Campus Russas, focado no desenvolvimento de um protótipo de veículo off-road para a competição Baja SAE Brasil.
 
@@ -6,7 +6,7 @@ Este website institucional é a vitrine digital da equipe, apresentando a histó
 
 ---
 
-### ✨ Tecnologias Utilizadas
+### Tecnologias Utilizadas
 
 * **Backend:** Python com **Flask** (Micro-framework)
 * **Banco de Dados:** **SQLAlchemy** (ORM)
@@ -15,7 +15,7 @@ Este website institucional é a vitrine digital da equipe, apresentando a histó
 
 ---
 
-### ⚙️ Configuração Local (Ambiente de Desenvolvimento)
+### Configuração Local (Ambiente de Desenvolvimento)
 
 Para rodar o projeto em sua máquina local, siga os passos abaixo.    
 
